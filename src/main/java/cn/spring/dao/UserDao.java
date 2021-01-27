@@ -1,4 +1,4 @@
-package cn.spring.service;
+package cn.spring.dao;
 
 public interface UserDao {
     public void save();
