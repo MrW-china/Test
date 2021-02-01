@@ -1,4 +1,4 @@
-package cn.dayTest.year_2021.tree.simple.day_28.identicalTree;
+package cn.dayTest.year_2021.tree.simple.month_01.day_28.identicalTree;
 
 
 import java.util.LinkedList;
