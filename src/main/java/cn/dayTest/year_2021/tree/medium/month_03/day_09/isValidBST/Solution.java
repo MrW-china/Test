@@ -4,7 +4,8 @@ public class Solution {
 
     public static void main (String[] args) {
         int maxValue = Integer.MAX_VALUE;
-        System.out.println(maxValue);
+        long nmsl = Long.MAX_VALUE;
+        System.out.println(nmsl);
     }
     public boolean isValidBST (TreeNode root) {
 //        if (root.left != null && root.left.val >= root.val) return false;
