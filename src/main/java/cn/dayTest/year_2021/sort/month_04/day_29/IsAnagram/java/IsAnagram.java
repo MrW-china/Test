@@ -1,4 +1,4 @@
-package cn.dayTest.year_2021.sort.month_04.day_29;
+package cn.dayTest.year_2021.sort.month_04.day_29.IsAnagram.java;
 
 import java.util.Arrays;
 import java.util.HashMap;
