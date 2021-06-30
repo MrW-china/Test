@@ -1,4 +1,4 @@
-package cn.dayTest.year_2021.tree.simple.month_06.day_29.generateTrees;
+package cn.dayTest.year_2021.tree.medium.month_06.day_29.generateTrees;
 
 import java.util.LinkedList;
 import java.util.List;
