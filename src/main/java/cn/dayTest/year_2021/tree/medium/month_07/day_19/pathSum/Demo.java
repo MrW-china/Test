@@ -8,7 +8,7 @@ import java.util.*;
  * */
 public class Demo {
     public static void main(String[] args) {
-
+System.out.println(1);
     }
 }
 
@@ -34,5 +34,53 @@ class Solution {
         dfs(root.left, targetSum - root.val);
         dfs(root.right, targetSum - root.val);
         list.pollLast();
+    }
+}
+
+/*
+*  answer2: 广度优先搜索;
+*  step:
+* */
+class Solution2{
+    List<List<Integer>> lists=new LinkedList<List<Integer>>();
+    Map<TreeNode,TreeNode> map=new HashMap<>();
+    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+        if (root==null){
+            return lists;
+        }
+        Queue<TreeNode> queueNode =new LinkedList<>();
+        Queue<Integer> queueSum=new LinkedList<>();
+        queueNode.offer(root);
+        queueSum.offer(0);
+        while(!queueNode.isEmpty()){
+            TreeNode poll = queueNode.poll();
+            int rec = queueSum.poll()+ poll.val;
+            if (poll.left == null && poll.right == null) {
+                if (rec==targetSum){
+                    getPath(poll);
+                }
+            }else{
+                if (poll.left != null) {
+                    map.put(poll.left,poll);
+                    queueNode.offer(poll.left);
+                    queueSum.offer(rec);
+                }
+                if (poll.right != null) {
+                    map.put(poll.right,poll);
+                    queueNode.offer(poll.right);
+                    queueSum.offer(rec);
+                }
+            }
+        }
+        return lists;
+    }
+    public void getPath(TreeNode node){
+        List<Integer> tmp=new LinkedList<>();
+        while (node!=null){
+            tmp.add(node.val);
+            node=map.get(node);
+        }
+        Collections.reverse(tmp);
+        lists.add(new LinkedList<>(tmp));
     }
 }
